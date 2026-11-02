@@ -3,6 +3,7 @@ services:
     image: postgres:15-alpine
     container_name: shelfspot_db
     profiles: ["backend", "full"]
+    restart: unless-stopped
     ports:
       - "${DB_PORT:-5432}:5432"
     environment:
